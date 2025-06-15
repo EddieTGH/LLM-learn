@@ -724,6 +724,18 @@ video {
   width: max-content;
 }
 
+.tw-w-auto {
+  width: auto;
+}
+
+.tw-w-\[450px\] {
+  width: 450px;
+}
+
+.tw-w-\[60px\] {
+  width: 60px;
+}
+
 .tw-min-w-\[350px\] {
   min-width: 350px;
 }
@@ -762,6 +774,10 @@ video {
 
 .tw-max-w-\[850px\] {
   max-width: 850px;
+}
+
+.tw-max-w-\[450px\] {
+  max-width: 450px;
 }
 
 .tw-flex-col {
