@@ -107,15 +107,17 @@
                     >
                         <input
                             type="email"
+                            id="hero-email-input"
                             class="input tw-h-full tw-w-auto tw-rounded-md tw-border-[2px] tw-border-solid tw-border-[#bfbfbf] tw-bg-transparent tw-p-2 tw-px-3 tw-outline-none tw-transition-colors tw-duration-[0.3s]"
                             placeholder="your@email.com"
                         />
-                        <a
+                        <button
+                            id="hero-get-access-btn"
                             class="btn tw-h-full tw-w-full tw-transition-colors tw-duration-[0.3s]"
-                            href=""
+                            type="button"
                         >
                             Get Access
-                        </a>
+                        </button>
                     </div>
                 </div>
 
@@ -263,6 +265,7 @@
 
             <a
                 href="https://"
+                id="book-demo-btn"
                 class="btn tw-mt-[2%] tw-duration-[0.3s] hover:tw-scale-105 max-md:tw-mt-8"
             >
                 Book a demo
@@ -412,15 +415,17 @@
                 >
                     <input
                         type="email"
+                        id="footer-email-input"
                         class="input tw-h-full tw-w-auto tw-p-2"
                         placeholder="your@email.com"
                     />
-                    <a
+                    <button
+                        id="footer-get-access-btn"
                         class="btn tw-transition-colors tw-duration-[0.3s]"
-                        href=""
+                        type="button"
                     >
                         Get Access
-                    </a>
+                    </button>
                 </div>
             </div>
         </section>
@@ -492,7 +497,7 @@
         referrerpolicy="no-referrer"
     />
 
-    <script src="./index.js"></script>
+    <script src="./index.js" type="module"></script>
     <script>
         const reviewSwiper = new Swiper('.review-container', {
             //effect: "coverflow",

@@ -1,4 +1,5 @@
 // initialization
+import { submitEmail } from './api/index.js';
 
 const RESPONSIVE_WIDTH = 1024
 
@@ -7,7 +8,12 @@ let isHeaderCollapsed = window.innerWidth < RESPONSIVE_WIDTH
 const collapseBtn = document.getElementById("collapse-btn")
 const collapseHeaderItems = document.getElementById("collapsed-header-items")
 
-
+// Email form elements
+const heroEmailInput = document.getElementById("hero-email-input")
+const heroGetAccessBtn = document.getElementById("hero-get-access-btn")
+const footerEmailInput = document.getElementById("footer-email-input")
+const footerGetAccessBtn = document.getElementById("footer-get-access-btn")
+const bookDemoBtn = document.getElementById("book-demo-btn")
 
 function onHeaderClickOutside(e) {
 
@@ -50,3 +56,125 @@ function responsive() {
 }
 
 window.addEventListener("resize", responsive)
+
+/**
+ * Handle email submission
+ * @param {string} email - The email to submit
+ * @param {HTMLElement} button - The button that was clicked
+ */
+async function handleEmailSubmission(email, button) {
+    if (!email) {
+        showNotification('Please enter your email address', 'error');
+        return;
+    }
+
+    // Show loading state
+    const originalText = button.textContent;
+    button.textContent = 'Submitting...';
+    button.disabled = true;
+
+    try {
+        const result = await submitEmail(email);
+        
+        console.log(result)
+        if (result.success) {
+            showNotification('Thank you! We\'ll be in touch soon.', 'success');
+            // Clear the email input
+            const emailInput = button.previousElementSibling || 
+                              document.querySelector(`input[value="${email}"]`);
+            if (emailInput) {
+                emailInput.value = '';
+            }
+        } else {
+            showNotification(result.message || 'Something went wrong. Please try again.', 'error');
+        }
+    } catch (error) {
+        showNotification('Network error. Please check your connection and try again.', 'error');
+        console.error('Email submission error:', error);
+    } finally {
+        // Restore button state
+        button.textContent = originalText;
+        button.disabled = false;
+    }
+}
+
+/**
+ * Show notification to user
+ * @param {string} message - Message to display
+ * @param {string} type - Type of notification ('success' or 'error')
+ */
+function showNotification(message, type) {
+    // Remove existing notifications
+    const existingNotification = document.querySelector('.notification');
+    if (existingNotification) {
+        existingNotification.remove();
+    }
+
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification tw-fixed tw-top-4 tw-right-4 tw-z-50 tw-p-4 tw-rounded-md tw-shadow-lg tw-transition-all tw-duration-300 ${
+        type === 'success' 
+            ? 'tw-bg-green-500 tw-text-white' 
+            : 'tw-bg-red-500 tw-text-white'
+    }`;
+    notification.textContent = message;
+
+    // Add to DOM
+    document.body.appendChild(notification);
+
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+        if (notification.parentNode) {
+            notification.remove();
+        }
+    }, 5000);
+}
+
+// Event listeners for email submissions
+if (heroGetAccessBtn) {
+    heroGetAccessBtn.addEventListener('click', () => {
+        const email = heroEmailInput?.value?.trim();
+        handleEmailSubmission(email, heroGetAccessBtn);
+    });
+}
+
+if (footerGetAccessBtn) {
+    footerGetAccessBtn.addEventListener('click', () => {
+        const email = footerEmailInput?.value?.trim();
+        handleEmailSubmission(email, footerGetAccessBtn);
+    });
+}
+
+// Handle "Book a demo" button - for now, we'll use a placeholder email
+if (bookDemoBtn) {
+    bookDemoBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        // For demo booking, we could either:
+        // 1. Open a modal to collect email
+        // 2. Use a placeholder email and show a message
+        // 3. Redirect to a separate demo booking page
+        
+        // For now, let's show a message asking for email
+        const email = prompt('Please enter your email address to book a demo:');
+        if (email) {
+            handleEmailSubmission(email, bookDemoBtn);
+        }
+    });
+}
+
+// Allow Enter key to submit email forms
+if (heroEmailInput) {
+    heroEmailInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            heroGetAccessBtn.click();
+        }
+    });
+}
+
+if (footerEmailInput) {
+    footerEmailInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            footerGetAccessBtn.click();
+        }
+    });
+}
