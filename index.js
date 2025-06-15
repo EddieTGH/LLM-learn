@@ -110,24 +110,26 @@ function showNotification(message, type) {
         existingNotification.remove();
     }
 
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.className = `notification tw-fixed tw-top-4 tw-right-4 tw-z-50 tw-p-4 tw-rounded-md tw-shadow-lg tw-transition-all tw-duration-300 ${
-        type === 'success' 
-            ? 'tw-bg-green-500 tw-text-white' 
-            : 'tw-bg-red-500 tw-text-white'
-    }`;
-    notification.textContent = message;
-
-    // Add to DOM
-    document.body.appendChild(notification);
-
-    // Auto remove after 5 seconds
-    setTimeout(() => {
-        if (notification.parentNode) {
-            notification.remove();
+    // Find which form was used by checking which button was recently clicked
+    // We'll show the message in both form containers to ensure it's visible
+    const heroMessage = document.getElementById('hero-message');
+    const footerMessage = document.getElementById('footer-message');
+    
+    // Show message in both containers (one will be visible depending on which form was used)
+    [heroMessage, footerMessage].forEach(messageElement => {
+        if (messageElement) {
+            messageElement.textContent = message;
+            messageElement.className = 'tw-mt-2 tw-text-sm tw-text-red-500';
+            
+            // Auto hide success messages after 5 seconds
+            if (type === 'success') {
+                setTimeout(() => {
+                    messageElement.textContent = '';
+                    messageElement.className = 'tw-mt-2 tw-text-sm tw-text-red-500 tw-hidden';
+                }, 5000);
+            }
         }
-    }, 5000);
+    });
 }
 
 // Event listeners for email submissions
