@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { BASE_URL, API_ENDPOINTS, DEFAULT_HEADERS } from './constants.js';
 import { handleApiError, handleApiSuccess, isValidEmail } from './utils.js';
 
@@ -30,13 +29,28 @@ export const submitEmail = async (email) => {
   }
 
   try {
-    const response = await axios.post(
-      `${BASE_URL}${API_ENDPOINTS.LLM_LEARN_EMAIL}`,
-      { email: trimmedEmail },
-      { headers: DEFAULT_HEADERS }
-    );
+    const response = await fetch(`${BASE_URL}${API_ENDPOINTS.LLM_LEARN_EMAIL}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        ...DEFAULT_HEADERS
+      },
+      body: JSON.stringify({ email: trimmedEmail })
+    });
 
-    return handleApiSuccess(response);
+    // Convert fetch response to axios-like format for compatibility
+    const responseData = {
+      data: await response.json().catch(() => ({})),
+      status: response.status,
+      statusText: response.statusText,
+      headers: response.headers
+    };
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
+
+    return handleApiSuccess(responseData);
   } catch (error) {
     return handleApiError(error);
   }
