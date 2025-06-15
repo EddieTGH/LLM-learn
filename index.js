@@ -115,17 +115,23 @@ function showNotification(message, type) {
     const heroMessage = document.getElementById('hero-message');
     const footerMessage = document.getElementById('footer-message');
     
+    // Determine the appropriate CSS classes based on message type
+    const baseClasses = 'tw-mt-2 tw-text-sm';
+    const colorClass = type === 'success' ? 'tw-text-green-500' : 'tw-text-red-500';
+    const visibleClasses = `${baseClasses} ${colorClass}`;
+    const hiddenClasses = `${baseClasses} ${colorClass} tw-hidden`;
+    
     // Show message in both containers (one will be visible depending on which form was used)
     [heroMessage, footerMessage].forEach(messageElement => {
         if (messageElement) {
             messageElement.textContent = message;
-            messageElement.className = 'tw-mt-2 tw-text-sm tw-text-red-500';
+            messageElement.className = visibleClasses;
             
             // Auto hide success messages after 5 seconds
             if (type === 'success') {
                 setTimeout(() => {
                     messageElement.textContent = '';
-                    messageElement.className = 'tw-mt-2 tw-text-sm tw-text-red-500 tw-hidden';
+                    messageElement.className = hiddenClasses;
                 }, 5000);
             }
         }

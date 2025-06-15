@@ -1027,6 +1027,11 @@ video {
   color: rgb(55 65 81 / var(--tw-text-opacity, 1));
 }
 
+.tw-text-green-500 {
+  --tw-text-opacity: 1;
+  color: rgb(34 197 94 / var(--tw-text-opacity, 1));
+}
+
 .tw-text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity, 1));
@@ -1089,10 +1094,6 @@ video {
 }
 
 @media not all and (min-width: 1024px) {
-  .max-lg\:tw-fixed {
-    position: fixed;
-  }
-
   .max-lg\:tw-mr-auto {
     margin-right: auto;
   }
@@ -1216,10 +1217,6 @@ video {
 
   .max-md\:tw-leading-snug {
     line-height: 1.375;
-  }
-
-  .max-md\:tw-opacity-0 {
-    opacity: 0;
   }
 }
 
