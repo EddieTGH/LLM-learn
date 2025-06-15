@@ -9,7 +9,7 @@ const getEnvVar = (name, defaultValue) => {
   return process?.env?.[name] || defaultValue;
 };
 
-const BASE_URL = getEnvVar('NEXT_PUBLIC_BACKEND_URL', 'http://localhost:3000/api');
+const BASE_URL = typeof process !== 'undefined' ? process.env.NEXT_PUBLIC_BACKEND_URL : 'http://localhost:3000/api';
 
 const API_ENDPOINTS = {
   LLM_LEARN_EMAIL: '/llm-learn/email-signup'
