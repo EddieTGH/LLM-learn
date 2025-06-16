@@ -14,7 +14,7 @@ const getBackendUrl = () => {
 const BASE_URL = getBackendUrl();
 
 const API_ENDPOINTS = {
-  LLM_LEARN_EMAIL: '/llm-learn/email-signup'
+  LLM_LEARN_EMAIL: '/intake/llm-learn'
 };
 
 const DEFAULT_HEADERS = {
