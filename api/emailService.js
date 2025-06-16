@@ -32,7 +32,6 @@ export const submitEmail = async (email) => {
     const response = await fetch(`${BASE_URL}${API_ENDPOINTS.LLM_LEARN_EMAIL}`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
         ...DEFAULT_HEADERS
       },
       body: JSON.stringify({ email: trimmedEmail })

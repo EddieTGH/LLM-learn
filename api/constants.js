@@ -20,6 +20,7 @@ const API_ENDPOINTS = {
 const DEFAULT_HEADERS = {
   'Content-Type': 'application/json',
   'Accept': 'application/json',
+  'Origin': typeof window !== 'undefined' ? window.location.origin : 'http://localhost:8080',
 };
 
 export { BASE_URL, API_ENDPOINTS, DEFAULT_HEADERS }; 
