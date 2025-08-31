@@ -1,266 +1,272 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>LLM Learn - Turn Your AI Chats Into Knowledge</title>
-        <meta name="description" content="Transform your LLM conversations into interactive learning experiences. Never forget important insights again with gamified flashcards and smart summaries." />
-        <link
-            rel="shortcut icon"
-            href="./assets/logo/llm-learn-logo.png"
-            type="image/x-icon"
-        />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LLM Learn - Turn Your Cursor Chats Into Knowledge</title>
+    <meta
+      name="description"
+      content="Transform your Cursor conversations into interactive learning experiences. Never forget important insights again with gamified flashcards and smart summaries."
+    />
+    <link
+      rel="shortcut icon"
+      href="./assets/logo/llm-learn-logo.png"
+      type="image/x-icon"
+    />
 
-        <!-- Open Graph / Facebook -->
-        <meta property="og:title" content="LLM Learn - Turn Your AI Chats Into Knowledge" />
-        <meta property="og:description" content="Transform your LLM conversations into interactive learning experiences. Never forget important insights again with gamified flashcards and smart summaries." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://github.com/PaulleDemon" />
-        <!--Replace with the current website url-->
-        <meta property="og:image" content="" />
+    <!-- Open Graph / Facebook -->
+    <meta
+      property="og:title"
+      content="LLM Learn - Turn Your Cursor Chats Into Knowledge"
+    />
+    <meta
+      property="og:description"
+      content="Transform your LLM conversations into interactive learning experiences. Never forget important insights again with gamified flashcards and smart summaries."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://github.com/PaulleDemon" />
+    <!--Replace with the current website url-->
+    <meta property="og:image" content="" />
 
-        <link rel="stylesheet" href="./css/tailwind-build.css" />
-        <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/tailwind-build.css" />
+    <link rel="stylesheet" href="./css/index.css" />
 
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
-            integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
-    </head>
-    <body class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-[#ffffff]">
-        <header
-            class="tw-top-0 tw-z-20 tw-flex tw-h-[60px] tw-w-full tw-bg-white tw-px-[10%] tw-text-black max-lg:tw-mr-auto max-lg:tw-px-4 lg:tw-justify-around"
-        >
-            <a class="tw-h-[60px] tw-w-[60px] tw-p-[4px]" href="">
-                <img
-                    src="./assets/logo/llm-learn-logo.png"
-                    alt="logo"
-                    class="tw-object tw-h-full tw-w-full"
-                />
-            </a>
-            <div
-                class="collapsible-header animated-collapse max-lg:tw-shadow-md"
-                id="collapsed-header-items"
-            >
-                <div
-                    class="tw-flex tw-h-full tw-w-max tw-gap-5 tw-text-base tw-text-black max-lg:tw-mt-[30px] max-lg:tw-flex-col max-lg:tw-place-items-end max-lg:tw-gap-5 lg:tw-mx-auto lg:tw-place-items-center"
-                >
-                    <a class="header-links" href="#how-it-works"> How It Works </a>
-                    <a class="header-links" href="#features"> Features </a>
-                    <a class="header-links" href="#success-stories"> Success Stories </a>
-                    <a class="header-links" href="#join-revolution">
-                        Get Started
-                    </a>
-                </div>
-                <div
-                    class="tw-flex tw-place-items-center tw-gap-[20px] tw-text-lg max-md:tw-w-full max-md:tw-flex-col max-md:tw-place-content-center"
-                >
-                    <a
-                        href="#join-revolution"
-                        aria-label="signup"
-                        class="tw-rounded-sm tw-border-2 tw-border-[#1c1c1c] tw-p-1 tw-px-2 tw-transition-colors tw-duration-[0.3s] hover:tw-bg-black hover:tw-text-white"
-                    >
-                        Try Free
-                    </a>
-                </div>
-            </div>
-            <button
-                class="bi bi-list tw-absolute tw-right-3 tw-top-3 tw-z-50 tw-text-3xl tw-text-black lg:tw-hidden"
-                onclick="toggleHeader()"
-                aria-label="menu"
-                id="collapse-btn"
-            ></button>
-        </header>
-
-        <section
-            class="tw-relative tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col tw-overflow-hidden max-lg:tw-p-4 max-md:tw-mt-[50px]"
-            id="get-started"
-        >
-            <div
-                class="tw-flex tw-h-full tw-w-full tw-place-content-center tw-gap-6 max-xl:tw-flex-col max-xl:tw-place-items-center"
-            >
-                <div
-                    class="tw-flex tw-min-w-[450px] tw-max-w-[800px] tw-flex-col tw-place-content-center max-xl:tw-min-w-[250px]"
-                >
-                    <div
-                        class="tw-flex tw-flex-wrap tw-text-6xl tw-font-semibold tw-uppercase tw-leading-[80px] max-lg:tw-text-4xl max-md:tw-leading-snug"
-                    >
-                        Turn your AI chats
-                        <br />
-                        into lasting
-                        <br />
-                        knowledge.
-                    </div>
-                    <div
-                        class="reveal tw-mt-10 tw-p-2 tw-text-justify max-lg:tw-max-w-full"
-                    >
-                        Stop asking ChatGPT the same questions over and over. Transform your valuable LLM conversations into interactive learning experiences with gamified flashcards and smart summaries that help you actually remember what matters.
-                    </div>
-
-                    <h2 class="reveal tw-mt-6 tw-text-lg">Start Learning Smarter Today</h2>
-                    <div
-                        class="reveal tw-mt-4 tw-flex tw-h-[50px] tw-w-[350px] tw-max-w-[350px] tw-place-items-center tw-gap-2 tw-overflow-hidden"
-                    >
-                        <input
-                            type="email"
-                            id="hero-email-input"
-                            class="input tw-h-full tw-w-auto tw-rounded-md tw-border-[2px] tw-border-solid tw-border-[#bfbfbf] tw-bg-transparent tw-p-2 tw-px-3 tw-outline-none tw-transition-colors tw-duration-[0.3s]"
-                            placeholder="your@email.com"
-                        />
-                        <button
-                            id="hero-get-access-btn"
-                            class="btn tw-h-full tw-w-full tw-transition-colors tw-duration-[0.3s]"
-                            type="button"
-                        >
-                            Get Free Access
-                        </button>
-                    </div>
-                    <div id="hero-message" class="tw-mt-2 tw-text-sm tw-text-red-500 tw-hidden"></div>
-                    <!-- Hidden element to ensure green color class is included in Tailwind build -->
-                    <div class="tw-text-green-500 tw-hidden" aria-hidden="true"></div>
-                </div>
-
-                <div
-                    class="tw-flex tw-max-h-[120vh] tw-w-full tw-max-w-[850px] tw-place-content-center tw-place-items-center tw-overflow-hidden max-md:tw-max-w-[350px]"
-                >
-                    <div
-                        class="tw-relative tw-flex tw-w-fit tw-place-content-center tw-place-items-center"
-                    >
-                        <div
-                            class="tw-flex tw-max-h-[550px] tw-min-h-[450px] tw-min-w-[350px] tw-max-w-[650px] tw-overflow-hidden tw-rounded-2xl tw-shadow-xl max-lg:tw-h-[320px] max-lg:tw-w-[320px]"
-                        >
-                            <img
-                                src="./assets/images/llm-learn-dashboard.png"
-                                alt="dashboard"
-                                class="tw-h-full tw-w-full tw-object-cover max-lg:tw-object-contain"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section
-            class= "tw-relative tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-6"
-            id="how-it-works"
-        >
-            <div
-                class="tw-flex tw-max-w-[750px] tw-flex-col tw-gap-5 tw-text-center"
-            >
-                <h2
-                    class="tw-text-4xl tw-font-semibold max-lg:tw-text-3xl"
-                >
-                    Stop forgetting what you've already learned
-                </h2>
-
-                <div class="tw-text-gray-700">
-                    We've all been there - asking ChatGPT the same question for the third time because we forgot the answer. LLM Learn transforms your valuable AI conversations into permanent knowledge through interactive learning modules that actually stick in your memory.
-                </div>
-            </div>
-        </section>
-
-        <section
-            class="tw-relative tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-6"
-            id="features"
-        >
-            <div class="tw-flex tw-flex-col tw-place-items-center tw-gap-5">
-                <h2 class="tw-mt-5 tw-text-4xl tw-font-semibold">
-                    Features that make learning stick
-                </h2>
-
-                <div class="tw-flex tw-gap-6 max-lg:tw-flex-col">
-                    <div
-                        class="tw-flex tw-h-[400px] tw-w-[350px] tw-flex-col tw-gap-2 tw-rounded-xl tw-p-4 tw-shadow-xl"
-                    >
-                        <div
-                            class="tw-h-[200px] tw-w-full tw-overflow-clip tw-rounded-xl"
-                        >
-                            <img
-                                src="./assets/images/llm-learn-import.png"
-                                alt="feature1"
-                            />
-                        </div>
-                        <h3 class="tw-text-2xl">Smart Chat Import</h3>
-                        <div>
-                            Seamlessly ingest your LLM chat history from any platform. Customize what you want to learn by checking or unchecking key concepts that matter to you.
-                        </div>
-                    </div>
-                    <div
-                        class="tw-flex tw-h-[400px] tw-w-[350px] tw-flex-col tw-gap-2 tw-rounded-xl tw-p-4 tw-shadow-xl"
-                    >
-                        <div
-                            class="tw-h-[200px] tw-w-full tw-overflow-clip tw-rounded-xl"
-                        >
-                            <img
-                                src="./assets/images/LLM-Learn-Game.png"
-                                alt="feature2"
-                            />
-                        </div>
-                        <h3 class="tw-text-2xl">Interactive Flashcards and Games</h3>
-                        <div>
-                            Transform complex AI responses into bite-sized, gamified flashcards. Learn through spaced repetition and interactive quizzes that make knowledge retention effortless.
-                        </div>
-                    </div>
-                    <div
-                        class="tw-flex tw-h-[400px] tw-w-[350px] tw-flex-col tw-gap-2 tw-rounded-xl tw-p-4 tw-shadow-xl"
-                    >
-                        <div
-                            class="tw-h-[200px] tw-w-full tw-overflow-clip tw-rounded-xl"
-                        >
-                            <img
-                                src="./assets/images/llm-learn-summaries.png"
-                                alt="feature3"
-                            />
-                        </div>
-                        <h3 class="tw-text-2xl">Smart Summaries</h3>
-                        <div>
-                            Get non-interactive cheat sheets that distill high-level concepts from your conversations. Perfect for quick reference and comprehensive review.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section
-        class="tw-relative tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-6"
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+      integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-[#ffffff]">
+    <header
+      class="tw-top-0 tw-z-20 tw-flex tw-h-[60px] tw-w-full tw-bg-white tw-px-[10%] tw-text-black max-lg:tw-mr-auto max-lg:tw-px-4 lg:tw-justify-around"
     >
-        <h2 class="tw-text-3xl tw-text-[#5d5d5d] max-lg:tw-text-2xl">
-            Trusted by knowledge workers everywhere
-        </h2>
+      <a class="tw-h-[60px] tw-w-[60px] tw-p-[4px]" href="">
+        <img
+          src="./assets/logo/llm-learn-logo.png"
+          alt="logo"
+          class="tw-object tw-h-full tw-w-full"
+        />
+      </a>
+      <div
+        class="collapsible-header animated-collapse max-lg:tw-shadow-md"
+        id="collapsed-header-items"
+      >
+        <div
+          class="tw-flex tw-h-full tw-w-max tw-gap-5 tw-text-base tw-text-black max-lg:tw-mt-[30px] max-lg:tw-flex-col max-lg:tw-place-items-end max-lg:tw-gap-5 lg:tw-mx-auto lg:tw-place-items-center"
+        >
+          <a class="header-links" href="#how-it-works"> How It Works </a>
+          <a class="header-links" href="#features"> Features </a>
+          <a class="header-links" href="#success-stories"> Success Stories </a>
+          <a class="header-links" href="#join-revolution"> Get Started </a>
+        </div>
+        <div
+          class="tw-flex tw-place-items-center tw-gap-[20px] tw-text-lg max-md:tw-w-full max-md:tw-flex-col max-md:tw-place-content-center"
+        >
+          <a
+            href="#join-revolution"
+            aria-label="signup"
+            class="tw-rounded-sm tw-border-2 tw-border-[#1c1c1c] tw-p-1 tw-px-2 tw-transition-colors tw-duration-[0.3s] hover:tw-bg-black hover:tw-text-white"
+          >
+            Try Free
+          </a>
+        </div>
+      </div>
+      <button
+        class="bi bi-list tw-absolute tw-right-3 tw-top-3 tw-z-50 tw-text-3xl tw-text-black lg:tw-hidden"
+        onclick="toggleHeader()"
+        aria-label="menu"
+        id="collapse-btn"
+      ></button>
+    </header>
+
+    <section
+      class="tw-relative tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col tw-overflow-hidden max-lg:tw-p-4 max-md:tw-mt-[50px]"
+      id="get-started"
+    >
+      <div
+        class="tw-flex tw-h-full tw-w-full tw-place-content-center tw-gap-6 max-xl:tw-flex-col max-xl:tw-place-items-center"
+      >
+        <div
+          class="tw-flex tw-min-w-[450px] tw-max-w-[800px] tw-flex-col tw-place-content-center max-xl:tw-min-w-[250px]"
+        >
+          <div
+            class="tw-flex tw-flex-wrap tw-text-6xl tw-font-semibold tw-uppercase tw-leading-[80px] max-lg:tw-text-4xl max-md:tw-leading-snug"
+          >
+            Turn your Cursor chats
+            <br />
+            into lasting
+            <br />
+            knowledge.
+          </div>
+          <div
+            class="reveal tw-mt-10 tw-p-2 tw-text-justify max-lg:tw-max-w-full"
+          >
+            Stop asking Cursor the same questions over and over. Transform your
+            valuable Cursor conversations into interactive learning experiences
+            with gamified flashcards and smart summaries that help you actually
+            remember what matters.
+          </div>
+
+          <h2 class="reveal tw-mt-6 tw-text-lg">
+            Start Learning Smarter Today
+          </h2>
+          <div
+            class="reveal tw-mt-4 tw-flex tw-h-[50px] tw-w-[350px] tw-max-w-[350px] tw-place-items-center tw-gap-2 tw-overflow-hidden"
+          >
+            <input
+              type="email"
+              id="hero-email-input"
+              class="input tw-h-full tw-w-auto tw-rounded-md tw-border-[2px] tw-border-solid tw-border-[#bfbfbf] tw-bg-transparent tw-p-2 tw-px-3 tw-outline-none tw-transition-colors tw-duration-[0.3s]"
+              placeholder="your@email.com"
+            />
+            <button
+              id="hero-get-access-btn"
+              class="btn tw-h-full tw-w-full tw-transition-colors tw-duration-[0.3s]"
+              type="button"
+            >
+              Get Free Access
+            </button>
+          </div>
+          <div
+            id="hero-message"
+            class="tw-mt-2 tw-text-sm tw-text-red-500 tw-hidden"
+          ></div>
+          <!-- Hidden element to ensure green color class is included in Tailwind build -->
+          <div class="tw-text-green-500 tw-hidden" aria-hidden="true"></div>
+        </div>
 
         <div
-            class="tw-mt-8 tw-flex tw-w-full tw-place-content-center tw-gap-10"
+          class="tw-flex tw-max-h-[120vh] tw-w-full tw-max-w-[850px] tw-place-content-center tw-place-items-center tw-overflow-hidden max-md:tw-max-w-[350px]"
         >
-            <div class="tw-h-[50px] tw-w-[150px]">
-                <img
-                    src="./assets/images/brand-logos/google.svg"
-                    alt="Google"
-                    class="tw-h-full tw-w-full tw-object-contain tw-grayscale"
-                    srcset=""
-                />
+          <div
+            class="tw-relative tw-flex tw-w-fit tw-place-content-center tw-place-items-center"
+          >
+            <div
+              class="tw-flex tw-max-h-[550px] tw-min-h-[450px] tw-min-w-[350px] tw-max-w-[650px] tw-overflow-hidden tw-rounded-2xl tw-shadow-xl max-lg:tw-h-[320px] max-lg:tw-w-[320px]"
+            >
+              <img
+                src="./assets/images/llm-learn-dashboard.png"
+                alt="dashboard"
+                class="tw-h-full tw-w-full tw-object-cover max-lg:tw-object-contain"
+              />
             </div>
-            <div class="tw-h-[50px] tw-w-[150px]">
-                <img
-                    src="./assets/images/brand-logos/microsoft.svg"
-                    alt="Microsoft"
-                    class="tw-h-full tw-w-full tw-object-contain tw-grayscale"
-                    srcset=""
-                />
-            </div>
-            <div class="tw-h-[50px] tw-w-[150px]">
-                <img
-                    src="./assets/images/brand-logos/adobe.svg"
-                    alt="Adobe"
-                    class="tw-h-full tw-w-full tw-object-contain tw-grayscale"
-                    srcset=""
-                />
-            </div>
+          </div>
         </div>
+      </div>
+    </section>
+    <section
+      class="tw-relative tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-6"
+      id="how-it-works"
+    >
+      <div class="tw-flex tw-max-w-[750px] tw-flex-col tw-gap-5 tw-text-center">
+        <h2 class="tw-text-4xl tw-font-semibold max-lg:tw-text-3xl">
+          Stop forgetting what you've already learned
+        </h2>
+
+        <div class="tw-text-gray-700">
+          We've all been there - asking Cursor the same question for the third
+          time because we forgot the answer. LLM Learn transforms your valuable
+          Cursor conversations into permanent knowledge through interactive
+          learning modules that actually stick in your memory.
+        </div>
+      </div>
     </section>
 
-        <!-- <section
+    <section
+      class="tw-relative tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-6"
+      id="features"
+    >
+      <div class="tw-flex tw-flex-col tw-place-items-center tw-gap-5">
+        <h2 class="tw-mt-5 tw-text-4xl tw-font-semibold">
+          Features that make learning stick
+        </h2>
+
+        <div class="tw-flex tw-gap-6 max-lg:tw-flex-col">
+          <div
+            class="tw-flex tw-h-[400px] tw-w-[350px] tw-flex-col tw-gap-2 tw-rounded-xl tw-p-4 tw-shadow-xl"
+          >
+            <div class="tw-h-[200px] tw-w-full tw-overflow-clip tw-rounded-xl">
+              <img src="./assets/images/llm-learn-import.png" alt="feature1" />
+            </div>
+            <h3 class="tw-text-2xl">Smart Chat Import</h3>
+            <div>
+              Seamlessly ingest your Cursor chat history from any platform.
+              Customize what you want to learn by checking or unchecking key
+              concepts that matter to you.
+            </div>
+          </div>
+          <div
+            class="tw-flex tw-h-[400px] tw-w-[350px] tw-flex-col tw-gap-2 tw-rounded-xl tw-p-4 tw-shadow-xl"
+          >
+            <div class="tw-h-[200px] tw-w-full tw-overflow-clip tw-rounded-xl">
+              <img src="./assets/images/LLM-Learn-Game.png" alt="feature2" />
+            </div>
+            <h3 class="tw-text-2xl">Interactive Flashcards and Games</h3>
+            <div>
+              Transform complex Cursor AI responses into gamified flashcards.
+              Learn through spaced repetition and interactive quizzes that make
+              knowledge retention effortless.
+            </div>
+          </div>
+          <div
+            class="tw-flex tw-h-[400px] tw-w-[350px] tw-flex-col tw-gap-2 tw-rounded-xl tw-p-4 tw-shadow-xl"
+          >
+            <div class="tw-h-[200px] tw-w-full tw-overflow-clip tw-rounded-xl">
+              <img
+                src="./assets/images/llm-learn-summaries.png"
+                alt="feature3"
+              />
+            </div>
+            <h3 class="tw-text-2xl">Smart Summaries</h3>
+            <div>
+              Get non-interactive cheat sheets that distill high-level concepts
+              from your conversations. Perfect for quick reference and
+              comprehensive review.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="tw-relative tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-6"
+    >
+      <h2 class="tw-text-3xl tw-text-[#5d5d5d] max-lg:tw-text-2xl">
+        Trusted by knowledge workers everywhere
+      </h2>
+
+      <div class="tw-mt-8 tw-flex tw-w-full tw-place-content-center tw-gap-10">
+        <div class="tw-h-[50px] tw-w-[150px]">
+          <img
+            src="./assets/images/brand-logos/google.svg"
+            alt="Google"
+            class="tw-h-full tw-w-full tw-object-contain tw-grayscale"
+            srcset=""
+          />
+        </div>
+        <div class="tw-h-[50px] tw-w-[150px]">
+          <img
+            src="./assets/images/brand-logos/microsoft.svg"
+            alt="Microsoft"
+            class="tw-h-full tw-w-full tw-object-contain tw-grayscale"
+            srcset=""
+          />
+        </div>
+        <div class="tw-h-[50px] tw-w-[150px]">
+          <img
+            src="./assets/images/brand-logos/adobe.svg"
+            alt="Adobe"
+            class="tw-h-full tw-w-full tw-object-contain tw-grayscale"
+            srcset=""
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- <section
             class="tw-flex tw-min-h-[30vh] tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-gap-[10%] tw-overflow-hidden tw-p-4 tw-px-[10%] max-md:tw-flex-col"
         >
             <h2 class="tw-text-3xl max-md:tw-text-2xl">Ready to remember everything?</h2>
@@ -274,177 +280,184 @@
             </a>
         </section> -->
 
-        <section
-            class="tw-mt-5 tw-flex tw-w-full tw-flex-col tw-place-items-center tw-p-[2%]"
-            id="success-stories"
+    <section
+      class="tw-mt-5 tw-flex tw-w-full tw-flex-col tw-place-items-center tw-p-[2%]"
+      id="success-stories"
+    >
+      <h3
+        class="primary-text-color tw-text-3xl tw-font-medium max-md:tw-text-xl"
+      >
+        What our users are saying
+      </h3>
+
+      <div
+        class="swiper review-container tw-mt-8 tw-flex tw-w-fit tw-max-w-[550px] tw-flex-col tw-place-content-center tw-overflow-hidden tw-p-6 max-lg:tw-max-w-[300px] max-md:tw-h-[400px]"
+      >
+        <style>
+          .swiper-pagination-bullet {
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+            color: #000;
+            opacity: 1;
+            background: rgba(0, 0, 0, 0.2);
+          }
+          .swiper-pagination-bullet:hover {
+            color: #000;
+            opacity: 1;
+            background: #1f1c1cbd;
+          }
+
+          .swiper-pagination-bullet-active {
+            color: #fff;
+            background: #000 !important;
+          }
+
+          .swiper {
+            padding: 10px !important;
+          }
+        </style>
+
+        <div
+          class="swiper-wrapper !tw-h-[250px] tw-space-x-4 tw-text-lg max-md:tw-text-base"
         >
-            <h3
-                class="primary-text-color tw-text-3xl tw-font-medium max-md:tw-text-xl"
-            >
-                What our users are saying
-            </h3>
-
+          <div
+            class="swiper-slide review-card tw-relative tw-flex tw-flex-col tw-text-justify"
+          >
             <div
-                class="swiper review-container tw-mt-8 tw-flex tw-w-fit tw-max-w-[550px] tw-flex-col tw-place-content-center tw-overflow-hidden tw-p-6 max-lg:tw-max-w-[300px] max-md:tw-h-[400px]"
+              class="tw-h-[50px] tw-w-[50px] tw-overflow-hidden tw-rounded-full tw-border-[2px] tw-border-solid tw-border-[#1c191a]"
             >
-                <style>
-                    .swiper-pagination-bullet {
-                        width: 20px;
-                        height: 20px;
-                        text-align: center;
-                        line-height: 20px;
-                        font-size: 12px;
-                        color: #000;
-                        opacity: 1;
-                        background: rgba(0, 0, 0, 0.2);
-                    }
-                    .swiper-pagination-bullet:hover {
-                        color: #000;
-                        opacity: 1;
-                        background: #1f1c1cbd;
-                    }
-
-                    .swiper-pagination-bullet-active {
-                        color: #fff;
-                        background: #000 !important;
-                    }
-
-                    .swiper {
-                        padding: 10px !important;
-                    }
-                </style>
-
-                <div
-                    class="swiper-wrapper !tw-h-[250px] tw-space-x-4 tw-text-lg max-md:tw-text-base"
-                >
-                    <div
-                        class="swiper-slide review-card tw-relative tw-flex tw-flex-col tw-text-justify"
-                    >
-                        <div
-                            class="tw-h-[50px] tw-w-[50px] tw-overflow-hidden tw-rounded-full tw-border-[2px] tw-border-solid tw-border-[#1c191a]"
-                        >
-                            <img
-                                src="./assets/images/people/women.jpg"
-                                class="tw-h-full tw-w-full tw-object-cover"
-                                alt="women"
-                            />
-                        </div>
-
-                        <p class="tw-mt-4 tw-italic tw-text-gray-600">
-                            "I used to ask ChatGPT the same coding questions every week. Now with LLM Learn, I actually remember the solutions and my productivity has skyrocketed!"
-                        </p>
-                        <p class="tw-mt-3">- Sarah Chen, Software Developer</p>
-                    </div>
-
-                    <div
-                        class="swiper-slide review-card slides tw-text-justify"
-                    >
-                        <div
-                            class="tw-h-[50px] tw-w-[50px] tw-overflow-hidden tw-rounded-full tw-border-[2px] tw-border-solid tw-border-[#1c191a]"
-                        >
-                            <img
-                                src="./assets/images/people/man.jpg"
-                                class="tw-h-full tw-w-full tw-object-cover"
-                                alt="man"
-                            />
-                        </div>
-                        <p class="tw-mt-5 tw-italic tw-text-gray-600">
-                            "The flashcard feature is genius! I'm finally retaining all those complex AI explanations instead of losing them in my chat history."
-                        </p>
-                        <p class="tw-mt-3">- Marcus Rodriguez, Data Scientist</p>
-                    </div>
-
-                    <div
-                        class="swiper-slide review-card slides tw-text-justify"
-                    >
-                        <div
-                            class="tw-h-[50px] tw-w-[50px] tw-overflow-hidden tw-rounded-full tw-border-[2px] tw-border-solid tw-border-[#1c191a]"
-                        >
-                            <img
-                                src="./assets/images/people/man2.jpg"
-                                class="tw-h-full tw-w-full tw-object-cover"
-                                alt="man"
-                            />
-                        </div>
-
-                        <p class="tw-mt-5 tw-italic tw-text-gray-600">
-                            "This app turned my scattered AI conversations into a personal knowledge base. It's like having a second brain that actually works!"
-                        </p>
-                        <p class="tw-mt-3">- David Kim, Product Manager</p>
-                    </div>
-
-                    <div
-                        class="swiper-slide review-card slides tw-text-justify"
-                    >
-                        <div
-                            class="tw-h-[50px] tw-w-[50px] tw-overflow-hidden tw-rounded-full tw-border-[2px] tw-border-solid tw-border-[#1c191a]"
-                        >
-                            <img
-                                src="./assets/images/people/women.jpg"
-                                class="tw-h-full tw-w-full tw-object-cover"
-                                alt="student"
-                            />
-                        </div>
-
-                        <p class="tw-mt-5 tw-italic tw-text-gray-600">
-                            "Game changer for my computer science degree! I was constantly re-asking ChatGPT about algorithms and data structures. Now I have all my study materials organized and I'm acing my exams!"
-                        </p>
-                        <p class="tw-mt-3">- Emma Thompson, CS Student</p>
-                    </div>
-                </div>
-
-                <!-- Navigation dots -->
-                <div class="dots-container tw-mt-auto"></div>
+              <img
+                src="./assets/images/people/women.jpg"
+                class="tw-h-full tw-w-full tw-object-cover"
+                alt="women"
+              />
             </div>
-        </section>
 
-        <section
-            class="tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-gap-[10%] tw-px-[10%]"
-            id="join-revolution"
-        >
+            <p class="tw-mt-4 tw-italic tw-text-gray-600">
+              "I used to ask Cursor the same coding questions every week. Now
+              with LLM Learn, I actually remember the solutions and my
+              productivity has skyrocketed!"
+            </p>
+            <p class="tw-mt-3">- Sarah Chen, Software Developer</p>
+          </div>
+
+          <div class="swiper-slide review-card slides tw-text-justify">
             <div
-                class="tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-gap-3"
+              class="tw-h-[50px] tw-w-[50px] tw-overflow-hidden tw-rounded-full tw-border-[2px] tw-border-solid tw-border-[#1c191a]"
             >
-                <h2 class="primary-text-color tw-text-3xl tw-font-medium max-md:tw-text-xl">
-                    Join the Learning Revolution
-                </h2>
-
-                <div
-                    class="tw-flex tw-h-[60px] tw-place-items-center tw-gap-2 tw-overflow-hidden tw-p-2"
-                >
-                    <input
-                        type="email"
-                        id="footer-email-input"
-                        class="input tw-h-full tw-w-auto tw-p-2"
-                        placeholder="your@email.com"
-                    />
-                    <button
-                        id="footer-get-access-btn"
-                        class="btn tw-transition-colors tw-duration-[0.3s]"
-                        type="button"
-                    >
-                        Get Free Access
-                    </button>
-                </div>
-                <div id="footer-message" class="tw-mt-2 tw-text-sm tw-text-red-500 tw-hidden"></div>
-                <!-- Hidden element to ensure green color class is included in Tailwind build -->
-                <div class="tw-text-green-500 tw-hidden" aria-hidden="true"></div>
+              <img
+                src="./assets/images/people/man.jpg"
+                class="tw-h-full tw-w-full tw-object-cover"
+                alt="man"
+              />
             </div>
-        </section>
+            <p class="tw-mt-5 tw-italic tw-text-gray-600">
+              "The flashcard feature is genius! I'm finally retaining all those
+              complex AI explanations instead of losing them in my chat
+              history."
+            </p>
+            <p class="tw-mt-3">- Marcus Rodriguez, Data Scientist</p>
+          </div>
 
-        <footer
-            class="tw-mt-auto tw-flex tw-w-full tw-place-content-around tw-gap-3 tw-px-[10%] tw-text-black max-md:tw-flex-col"
-        >
+          <div class="swiper-slide review-card slides tw-text-justify">
             <div
-                class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-place-items-center tw-gap-6 max-md:tw-w-full"
+              class="tw-h-[50px] tw-w-[50px] tw-overflow-hidden tw-rounded-full tw-border-[2px] tw-border-solid tw-border-[#1c191a]"
             >
-                <img
-                    src="./assets/logo/llm-learn-logo.png"
-                    alt="logo"
-                    srcset=""
-                    class="tw-max-w-[120px]"
-                />
-                <!-- <div>
+              <img
+                src="./assets/images/people/man2.jpg"
+                class="tw-h-full tw-w-full tw-object-cover"
+                alt="man"
+              />
+            </div>
+
+            <p class="tw-mt-5 tw-italic tw-text-gray-600">
+              "This app turned my scattered Cursor conversations into a personal
+              knowledge base. It's like having a second brain that actually
+              works!"
+            </p>
+            <p class="tw-mt-3">- David Kim, Product Manager</p>
+          </div>
+
+          <div class="swiper-slide review-card slides tw-text-justify">
+            <div
+              class="tw-h-[50px] tw-w-[50px] tw-overflow-hidden tw-rounded-full tw-border-[2px] tw-border-solid tw-border-[#1c191a]"
+            >
+              <img
+                src="./assets/images/people/women.jpg"
+                class="tw-h-full tw-w-full tw-object-cover"
+                alt="student"
+              />
+            </div>
+
+            <p class="tw-mt-5 tw-italic tw-text-gray-600">
+              "Game changer for my computer science degree! I was constantly
+              re-asking Cursor about algorithms and data structures. Now I have
+              all my study materials organized and I'm acing my exams!"
+            </p>
+            <p class="tw-mt-3">- Emma Thompson, CS Student</p>
+          </div>
+        </div>
+
+        <!-- Navigation dots -->
+        <div class="dots-container tw-mt-auto"></div>
+      </div>
+    </section>
+
+    <section
+      class="tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-gap-[10%] tw-px-[10%]"
+      id="join-revolution"
+    >
+      <div
+        class="tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-gap-3"
+      >
+        <h2
+          class="primary-text-color tw-text-3xl tw-font-medium max-md:tw-text-xl"
+        >
+          Join the Learning Revolution
+        </h2>
+
+        <div
+          class="tw-flex tw-h-[60px] tw-place-items-center tw-gap-2 tw-overflow-hidden tw-p-2"
+        >
+          <input
+            type="email"
+            id="footer-email-input"
+            class="input tw-h-full tw-w-auto tw-p-2"
+            placeholder="your@email.com"
+          />
+          <button
+            id="footer-get-access-btn"
+            class="btn tw-transition-colors tw-duration-[0.3s]"
+            type="button"
+          >
+            Get Free Access
+          </button>
+        </div>
+        <div
+          id="footer-message"
+          class="tw-mt-2 tw-text-sm tw-text-red-500 tw-hidden"
+        ></div>
+        <!-- Hidden element to ensure green color class is included in Tailwind build -->
+        <div class="tw-text-green-500 tw-hidden" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <footer
+      class="tw-mt-auto tw-flex tw-w-full tw-place-content-around tw-gap-3 tw-px-[10%] tw-text-black max-md:tw-flex-col"
+    >
+      <div
+        class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-place-items-center tw-gap-6 max-md:tw-w-full"
+      >
+        <img
+          src="./assets/logo/llm-learn-logo.png"
+          alt="logo"
+          srcset=""
+          class="tw-max-w-[120px]"
+        />
+        <!-- <div>
                     2 Lord Edward St,
                     <br />
                     D02 P634,
@@ -470,9 +483,9 @@
                         <i class="bi bi-instagram"></i>
                     </a>
                 </div> -->
-            </div>
+      </div>
 
-            <!-- <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-4">
+      <!-- <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-4">
                 <h2 class="tw-text-3xl max-md:tw-text-xl">Resources</h2>
                 <div class="tw-flex tw-flex-col tw-gap-3 max-md:tw-text-sm">
                     <a href="" class="footer-link">How It Works</a>
@@ -482,41 +495,41 @@
                     <a href="" class="footer-link">Privacy policy</a>
                 </div>
             </div> -->
-        </footer>
-    </body>
+    </footer>
+  </body>
 
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"
-        integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-    ></script>
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css"
-        integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-    />
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"
+    integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css"
+    integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 
-    <script src="./index.js" type="module"></script>
-    <script>
-        const reviewSwiper = new Swiper('.review-container', {
-            //effect: "coverflow",
-            // grabCursor: true,
-            loop: true,
-            centeredSlides: true,
-            slidesPerView: 'auto',
-            autoplay: {
-                delay: 7000,
-            },
-            pagination: {
-                el: '.dots-container',
-                clickable: true,
-                renderBullet: function (index, className) {
-                    return `<span class="!tw-h-[3px] !tw-w-[40px] !tw-rounded-none ${className}"></span>`
-                },
-            },
-        })
-    </script>
+  <script src="./index.js" type="module"></script>
+  <script>
+    const reviewSwiper = new Swiper(".review-container", {
+      //effect: "coverflow",
+      // grabCursor: true,
+      loop: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      autoplay: {
+        delay: 7000,
+      },
+      pagination: {
+        el: ".dots-container",
+        clickable: true,
+        renderBullet: function (index, className) {
+          return `<span class="!tw-h-[3px] !tw-w-[40px] !tw-rounded-none ${className}"></span>`;
+        },
+      },
+    });
+  </script>
 </html>
